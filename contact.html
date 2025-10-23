@@ -648,7 +648,7 @@
                         <h2>SEND US A MESSAGE</h2>
                         <div class="contact-form-accent-line"></div>
                     </div>
-                    <form id="contactForm">
+<form id="contactForm" onsubmit="return validateForm()">
                         <div class="form-group-edgy">
                             <label for="name">FULL NAME *</label>
                             <input type="text" id="name" name="name" required placeholder="Enter your full name">
@@ -811,6 +811,30 @@
                 }
             });
         });
+        function validateForm() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    // Basic validation
+    if (name.length < 2) {
+        alert('Please enter a valid name');
+        return false;
+    }
+    
+    if (!email.includes('@')) {
+        alert('Please enter a valid email');
+        return false;
+    }
+    
+    if (message.length < 10) {
+        alert('Please enter a message with at least 10 characters');
+        return false;
+    }
+    
+    return true;
+}
+
     </script>
     <script src="js/mobile-menu.js"></script>
 </body>
