@@ -811,30 +811,6 @@
                 }
             });
         });
-        function validateForm() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
-    // Basic validation
-    if (name.length < 2) {
-        alert('Please enter a valid name');
-        return false;
-    }
-    
-    if (!email.includes('@')) {
-        alert('Please enter a valid email');
-        return false;
-    }
-    
-    if (message.length < 10) {
-        alert('Please enter a message with at least 10 characters');
-        return false;
-    }
-    
-    return true;
-}
-
     </script>
     <script src="js/mobile-menu.js"></script>
 </body>
