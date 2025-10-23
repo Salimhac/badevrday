@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="IMG-20251022-WA0050.jpg">
+    <title>BADEVRDAY - Official Store</title>
+    <meta name="description" content="Official BADEVRDAY merchandise store. Get your t-shirts, hoodies, and accessories with unique designs.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Enhanced Hero Section to Match Founder Section */
+        .hero-edgy {
+            padding: 5rem 0;
+            background: #000;
+            border-top: 3px solid #ff0000;
+            border-bottom: 3px solid #ff0000;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated Background Elements */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 0, 0, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-message {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-card {
+            background: #111;
+            padding: 3rem;
+            border-radius: 15px;
+            border-left: 5px solid #ff0000;
+            position: relative;
+            animation: slideInUp 1s ease-out;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero-header h2 {
+            color: #ff0000;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6);
+            }
+        }
+
+        .hero-accent-line {
+            width: 100px;
+            height: 3px;
+            background: #ff0000;
+            margin: 0 auto;
+            animation: stretch 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes stretch {
+            from { width: 50px; }
+            to { width: 150px; }
+        }
+
+        .hero-content {
+            position: relative;
+        }
+
+        .hero-quote-icon {
+            font-size: 4rem;
+            color: #ff0000;
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-family: serif;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .hero-lead-quote {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #ff0000;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-left: 2rem;
+            animation: typewriter 3s steps(40) 1s both;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        .hero-content p {
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            margin-left: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .hero-content p:nth-child(2) { animation-delay: 0.5s; }
+        .hero-content p:nth-child(3) { animation-delay: 1s; }
+        .hero-content p:nth-child(4) { animation-delay: 1.5s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content strong {
+            color: #ff0000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            margin-left: 2rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 2s forwards;
+        }
+
+        .hero-btn-primary {
+            background: #ff0000;
+            color: #000;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            border: 2px solid #ff0000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .hero-btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .hero-btn-primary:hover {
+            background: transparent;
+            color: #ff0000;
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
+        }
+
+        .hero-btn-secondary {
+            background: transparent;
+            color: #ff0000;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            border: 2px solid #ff0000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-btn-secondary:hover {
+            background: #ff0000;
+            color: #000;
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
+        }
+
+        /* Enhanced Featured Products Section */
+        .featured-products-edgy {
+            padding: 5rem 0;
+            background: #000;
+            border-bottom: 3px solid #ff0000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .featured-header h2 {
+            color: #ff0000;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        .featured-accent-line {
+            width: 100px;
+            height: 3px;
+            background: #ff0000;
+            margin: 0 auto;
+            animation: stretch 2s ease-in-out infinite alternate;
+        }
+
+        .products-grid-edgy {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card-edgy {
+            background: #111;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 3px solid #ff0000;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .product-card-edgy:nth-child(1) { animation-delay: 0.3s; }
+        .product-card-edgy:nth-child(2) { animation-delay: 0.6s; }
+        .product-card-edgy:nth-child(3) { animation-delay: 0.9s; }
+
+        .product-card-edgy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .product-card-edgy:hover::before {
+            left: 100%;
+        }
+
+        .product-card-edgy:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 0, 0, 0.3);
+        }
+
+        .product-card-edgy img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border: 2px solid #333;
+            transition: all 0.3s ease;
+            transform: scale(0.9);
+            animation: scaleIn 0.5s ease-out 0.5s forwards;
+        }
+
+        @keyframes scaleIn {
+            to { transform: scale(1); }
+        }
+
+        .product-card-edgy:hover img {
+            border-color: #ff0000;
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .product-card-edgy h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .product-card-edgy:hover h3 {
+            color: #ff0000;
+        }
+
+        .product-price-edgy {
+            font-size: 1.5rem;
+            color: #ff0000;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            animation: pricePulse 3s infinite;
+        }
+
+        @keyframes pricePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #ff0000;
+            color: #000;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: badgeBounce 2s infinite;
+        }
+
+        @keyframes badgeBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* Enhanced Footer */
+        .footer-edgy {
+            background: #111;
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 3px solid #ff0000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-edgy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.05), transparent);
+            animation: slideRight 3s infinite;
+        }
+
+        @keyframes slideRight {
+            to { left: 100%; }
+        }
+
+        .footer-edgy p {
+            color: #fff;
+            font-size: 1rem;
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .footer-brand {
+            color: #ff0000;
+            font-weight: bold;
+            font-size: 1.2rem;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        /* Scroll-triggered animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-card {
+                padding: 2rem;
+            }
+            
+            .hero-header h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-lead-quote {
+                font-size: 1.2rem;
+                margin-left: 1rem;
+                white-space: normal;
+                animation: none;
+            }
+            
+            .hero-content p {
+                margin-left: 1rem;
+            }
+            
+            .hero-buttons {
+                margin-left: 1rem;
+                justify-content: center;
+            }
+            
+            .products-grid-edgy {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btn-primary, .hero-btn-secondary {
+                width: 200px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <div class="container">
+        <div class="logo">
+            <h1>BADEVRDAY</h1>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html" class="active">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        
+        <!-- Hamburger Menu Button -->
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu">
+    <button class="mobile-menu-close">&times;</button>
+    
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
+</div>
+    <!-- Enhanced Hero Section -->
+    <section class="hero-edgy">
+        <!-- Animated Background Elements -->
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-message">
+                <div class="hero-card">
+                    <div class="hero-header">
+                        <h2>OFFICIAL BADEVRDAY MERCHANDISE</h2>
+                        <div class="hero-accent-line"></div>
+                    </div>
+                    <div class="hero-content">
+                        <div class="hero-quote-icon">"</div>
+                        <p class="hero-lead-quote">WEAR THE ATTITUDE. BE BAD.</p>
+                        <p>Step into the world of BADEVRDAY - where every piece tells a story of rebellion, authenticity, and street culture. Our merchandise isn't just clothing; it's a statement of who you are and what you stand for.</p>
+                        <p>From the streets to your wardrobe, we bring you designs that break boundaries and challenge the ordinary. Join the movement and express your true self.</p>
+                        <p><strong>Limited Edition Collection - Get yours before it's gone!</strong></p>
+                        
+                        <div class="hero-buttons">
+                            <a href="shop.html" class="hero-btn-primary">SHOP NOW</a>
+                            <a href="#featured" class="hero-btn-secondary">VIEW COLLECTION</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder's Words Section -->
+    <section class="founder-words-edgy">
+        <div class="container">
+            <div class="edgy-header">
+                <h2>STRAIGHT FROM THE FOUNDER</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="founder-message">
+                <div class="message-card">
+                    <!-- Founder Profile Section -->
+                    <div class="founder-profile">
+                        <div class="founder-dp">
+                            <img src="IMG-20251022-WA0031.jpg" alt="Founder of BADEVRDAY" width="200" height="200">
+                        </div>
+                        <div class="founder-info">
+                            <h3>THE FOUNDER</h3>
+                            <p>A_FRICA (Creator)</p>
+                            <div class="social-links">
+                                <a href="https://wa.me/254115581784" class="whatsapp-btn" target="_blank">
+                                    <span>💬 WhatsApp</span>
+                                </a>
+                                <a href="https://instagram.com/bad_evrday.ke" class="instagram-btn" target="_blank">
+                                    <span>📷 Instagram</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quote Section -->
+                    <div class="quote-content">
+                        <div class="quote-icon">"</div>
+                        <p class="lead-quote">This isn't just clothing. It's a movement in the neighbourhood.</p>
+                        <p>I started BADEVRDAY because I was tired of seeing the same boring designs everywhere. We're not here to fit in - we're here to stand out. To be BAD. To build our own BRAND where authenticity is the only currency that matters.</p>
+                        <p>Every piece we create carries this energy. Wear it like armor. Own it like a revolution.</p>
+                        <p><strong>Want to connect? Hit me up on WhatsApp or Instagram!</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Featured Products Section -->
+    <section class="featured-products-edgy" id="featured">
+        <div class="container">
+            <div class="featured-header">
+                <h2>FEATURED COLLECTION</h2>
+                <div class="featured-accent-line"></div>
+            </div>
+            <div class="products-grid-edgy">
+                <!-- Product 1 -->
+                <div class="product-card-edgy">
+                    <div class="product-badge">BESTSELLER</div>
+                    <img src="IMG-20251022-WA0033.jpg" alt="BADEVRDAY T-Shirt" width="300" height="300">
+                    <h3>BADEVRDAY T-SHIRT</h3>
+                    <p class="product-price-edgy">KES. 900</p>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card-edgy">
+                    <div class="product-badge">NEW</div>
+                    <img src="IMG-20251022-WA0044.jpg" alt="BADEVRDAY Hoodie" width="300" height="300">
+                    <h3>BADEVRDAY HOODIE</h3>
+                    <p class="product-price-edgy">KES. 600</p>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card-edgy">
+                    <div class="product-badge">TRENDING</div>
+                    <img src="IMG-20251022-WA0041.jpg" alt="BADEVRDAY Trucker Hat" width="300" height="300">
+                    <h3>BADEVRDAY TRUCKER HAT</h3>
+                    <p class="product-price-edgy">KES. 750</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer-edgy">
+        <div class="container">
+            <p>&copy; 2024 <span class="footer-brand">BADEVRDAY MERCH</span>. All rights reserved. | Wear the Attitude. Be Bad.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animation trigger
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Add hover sound effects (optional)
+            const buttons = document.querySelectorAll('.hero-btn-primary, .hero-btn-secondary');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    // You can add sound here if needed
+                    this.style.transform = 'translateY(-2px) scale(1.05)';
+                });
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+        <script src="js/mobile-menu.js"></script>
+</body>
+</html>

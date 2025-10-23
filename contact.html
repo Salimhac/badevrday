@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="IMG-20251022-WA0050.jpg">
+    <title>Contact Us - BADEVRDAY MERCH</title>
+    <meta name="description" content="Get in touch with BADEVRDAY MERCH. Contact us for orders, support, or collaborations.">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Contact Page Styles to Match Index.html */
+        .contact-hero-edgy {
+            padding: 5rem 0;
+            background: #000;
+            border-top: 3px solid #ff0000;
+            border-bottom: 3px solid #ff0000;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated Background Elements */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 0, 0, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .contact-hero-message {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .contact-hero-card {
+            background: #111;
+            padding: 3rem;
+            border-radius: 15px;
+            border-left: 5px solid #ff0000;
+            position: relative;
+            animation: slideInUp 1s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-hero-header h1 {
+            color: #ff0000;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6);
+            }
+        }
+
+        .contact-hero-accent-line {
+            width: 100px;
+            height: 3px;
+            background: #ff0000;
+            margin: 0 auto;
+            animation: stretch 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes stretch {
+            from { width: 50px; }
+            to { width: 150px; }
+        }
+
+        .contact-hero-content p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-top: 1rem;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Enhanced Contact Content Section */
+        .contact-content-edgy {
+            padding: 5rem 0;
+            background: #000;
+            border-bottom: 3px solid #ff0000;
+        }
+
+        .contact-grid-edgy {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        /* Contact Info Card */
+        .contact-info-edgy {
+            background: #111;
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-left: 3px solid #ff0000;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+
+        .contact-info-edgy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.05), transparent);
+            transition: left 0.5s;
+        }
+
+        .contact-info-edgy:hover::before {
+            left: 100%;
+        }
+
+        .contact-info-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info-header h2 {
+            color: #ff0000;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        .contact-info-accent-line {
+            width: 80px;
+            height: 3px;
+            background: #ff0000;
+            margin: 0 auto;
+        }
+
+        .contact-method-edgy {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #1a1a1a;
+            border-radius: 10px;
+            border-left: 2px solid #ff0000;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .contact-method-edgy:nth-child(1) { animation-delay: 0.4s; }
+        .contact-method-edgy:nth-child(2) { animation-delay: 0.5s; }
+        .contact-method-edgy:nth-child(3) { animation-delay: 0.6s; }
+        .contact-method-edgy:nth-child(4) { animation-delay: 0.7s; }
+
+        .contact-method-edgy:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.2);
+        }
+
+        .contact-method-edgy h3 {
+            color: #ff0000;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-method-edgy p {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Form Card */
+        .contact-form-edgy {
+            background: #111;
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-left: 3px solid #ff0000;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+            opacity: 0;
+        }
+
+        .contact-form-edgy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.05), transparent);
+            transition: left 0.5s;
+        }
+
+        .contact-form-edgy:hover::before {
+            left: 100%;
+        }
+
+        .contact-form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-form-header h2 {
+            color: #ff0000;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        .contact-form-accent-line {
+            width: 80px;
+            height: 3px;
+            background: #ff0000;
+            margin: 0 auto;
+        }
+
+        .form-group-edgy {
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .form-group-edgy:nth-child(1) { animation-delay: 0.7s; }
+        .form-group-edgy:nth-child(2) { animation-delay: 0.8s; }
+        .form-group-edgy:nth-child(3) { animation-delay: 0.9s; }
+        .form-group-edgy:nth-child(4) { animation-delay: 1.0s; }
+        .form-group-edgy:nth-child(5) { animation-delay: 1.1s; }
+
+        .form-group-edgy label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .form-group-edgy input,
+        .form-group-edgy textarea,
+        .form-group-edgy select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #333;
+            border-radius: 8px;
+            background: #1a1a1a;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group-edgy input:focus,
+        .form-group-edgy textarea:focus,
+        .form-group-edgy select:focus {
+            outline: none;
+            border-color: #ff0000;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .form-group-edgy textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn-edgy {
+            background: #ff0000;
+            color: #000;
+            border: none;
+            padding: 1.2rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out 1.2s forwards;
+            opacity: 0;
+        }
+
+        .submit-btn-edgy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .submit-btn-edgy:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn-edgy:hover {
+            background: transparent;
+            color: #ff0000;
+            border: 2px solid #ff0000;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
+        }
+
+        /* Enhanced FAQ Section */
+        .faq-section-edgy {
+            margin-top: 4rem;
+            animation: fadeInUp 1s ease-out 0.8s forwards;
+            opacity: 0;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-header h2 {
+            color: #ff0000;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        .faq-accent-line {
+            width: 100px;
+            height: 3px;
+            background: #ff0000;
+            margin: 0 auto;
+            animation: stretch 2s ease-in-out infinite alternate;
+        }
+
+        .faq-item-edgy {
+            background: #111;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            border-left: 3px solid #ff0000;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item-edgy:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.2);
+        }
+
+        .faq-question-edgy {
+            padding: 1.5rem;
+            background: #1a1a1a;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question-edgy:hover {
+            background: #222;
+        }
+
+        .faq-question-edgy h3 {
+            color: #fff;
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .faq-question-edgy span {
+            color: #ff0000;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer-edgy {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: #111;
+        }
+
+        .faq-answer-edgy.active {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-answer-edgy p {
+            color: #ccc;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Enhanced Footer */
+        .footer-edgy {
+            background: #111;
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 3px solid #ff0000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-edgy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.05), transparent);
+            animation: slideRight 3s infinite;
+        }
+
+        @keyframes slideRight {
+            to { left: 100%; }
+        }
+
+        .footer-edgy p {
+            color: #fff;
+            font-size: 1rem;
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .footer-brand {
+            color: #ff0000;
+            font-weight: bold;
+            font-size: 1.2rem;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-grid-edgy {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-hero-card {
+                padding: 2rem;
+            }
+            
+            .contact-hero-header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info-edgy,
+            .contact-form-edgy {
+                padding: 2rem;
+            }
+            
+            .faq-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-hero-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-info-edgy,
+            .contact-form-edgy {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+   <header>
+    <div class="container">
+        <div class="logo">
+            <h1>BADEVRDAY</h1>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html" class="active">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        
+        <!-- Hamburger Menu Button -->
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu">
+    <button class="mobile-menu-close">&times;</button>
+    
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
+</div>
+    <!-- Enhanced Contact Hero Section -->
+    <section class="contact-hero-edgy">
+        <!-- Animated Background Elements -->
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        
+        <div class="container">
+            <div class="contact-hero-message">
+                <div class="contact-hero-card">
+                    <div class="contact-hero-header">
+                        <h1>GET IN TOUCH</h1>
+                        <div class="contact-hero-accent-line"></div>
+                    </div>
+                    <div class="contact-hero-content">
+                        <p>WE'RE HERE TO HELP - CONNECT WITH THE BADEVRDAY FAMILY</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Contact Content Section -->
+    <section class="contact-content-edgy">
+        <div class="container">
+            <div class="contact-grid-edgy">
+                <!-- Enhanced Contact Information -->
+                <div class="contact-info-edgy">
+                    <div class="contact-info-header">
+                        <h2>CONTACT INFORMATION</h2>
+                        <div class="contact-info-accent-line"></div>
+                    </div>
+                    
+                    <div class="contact-method-edgy">
+                        <h3>📧 EMAIL</h3>
+                        <p>badevrday120@gmail.com</p>
+                        <p style="color: #ff0000; font-size: 0.9rem;">We respond within 24 hours</p>
+                    </div>
+
+                    <div class="contact-method-edgy">
+                        <h3>📞 WHATSAPP</h3>
+                        <p>+254 115 581 784</p>
+                        <p style="color: #ff0000; font-size: 0.9rem;">Direct messaging for quick responses</p>
+                    </div>
+
+                    <div class="contact-method-edgy">
+                        <h3>📍 SOCIAL MEDIA</h3>
+                        <p>Instagram: @bad_evrday.ke</p>
+                        <p>TikTok: @badevrday</p>
+                        <p style="color: #ff0000; font-size: 0.9rem;">Follow us for latest drops</p>
+                    </div>
+
+                    <div class="contact-method-edgy">
+                        <h3>🚚 LOCATION</h3>
+                        <p>Based in Nairobi, Kenya</p>
+                        <p>Nationwide shipping available</p>
+                        <p style="color: #ff0000; font-size: 0.9rem;">Fast delivery across Kenya</p>
+                    </div>
+                </div>
+
+                <!-- Enhanced Contact Form -->
+                <div class="contact-form-edgy">
+                    <div class="contact-form-header">
+                        <h2>SEND US A MESSAGE</h2>
+                        <div class="contact-form-accent-line"></div>
+                    </div>
+                    <form id="contactForm">
+                        <div class="form-group-edgy">
+                            <label for="name">FULL NAME *</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group-edgy">
+                            <label for="email">EMAIL ADDRESS *</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                        </div>
+
+                        <div class="form-group-edgy">
+                            <label for="subject">SUBJECT *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">SELECT A TOPIC</option>
+                                <option value="order">ORDER SUPPORT</option>
+                                <option value="product">PRODUCT QUESTION</option>
+                                <option value="shipping">SHIPPING INQUIRY</option>
+                                <option value="collab">COLLABORATION</option>
+                                <option value="other">OTHER</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group-edgy">
+                            <label for="order">ORDER NUMBER (IF APPLICABLE)</label>
+                            <input type="text" id="order" name="order" placeholder="Enter your order number">
+                        </div>
+
+                        <div class="form-group-edgy">
+                            <label for="message">MESSAGE *</label>
+                            <textarea id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn-edgy">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Enhanced FAQ Section -->
+            <div class="faq-section-edgy">
+                <div class="faq-header">
+                    <h2>FREQUENTLY ASKED QUESTIONS</h2>
+                    <div class="faq-accent-line"></div>
+                </div>
+                
+                <div class="faq-item-edgy">
+                    <div class="faq-question-edgy">
+                        <h3>How long does shipping take in Kenya?</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer-edgy">
+                        <p>Nairobi: 1-2 business days. Other major towns: 2-3 business days. Remote areas: 3-5 business days. We use reliable courier services for all deliveries.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-edgy">
+                    <div class="faq-question-edgy">
+                        <h3>What's your return policy?</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer-edgy">
+                        <p>We accept returns within 14 days of delivery. Items must be unworn, unwashed, and with original tags. Contact us for a return authorization and instructions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-edgy">
+                    <div class="faq-question-edgy">
+                        <h3>Do you offer custom sizes?</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer-edgy">
+                        <p>Yes! We offer custom sizing for most of our products. Contact us with your measurements and we'll create a perfect fit for you.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-edgy">
+                    <div class="faq-question-edgy">
+                        <h3>How do I track my order?</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer-edgy">
+                        <p>Once your order ships, you'll receive a tracking number via WhatsApp and email. You can track your order in real-time through our partner courier services.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item-edgy">
+                    <div class="faq-question-edgy">
+                        <h3>What payment methods do you accept?</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer-edgy">
+                        <p>We accept M-Pesa, bank transfers, and cash on delivery (Nairobi only). All payments are secure and processed through trusted payment gateways.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer-edgy">
+        <div class="container">
+            <p>&copy; 2024 <span class="footer-brand">BADEVRDAY MERCH</span>. All rights reserved. | Wear the Attitude. Be Bad.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question-edgy');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isActive = answer.classList.contains('active');
+                    
+                    // Close all answers
+                    document.querySelectorAll('.faq-answer-edgy').forEach(ans => {
+                        ans.classList.remove('active');
+                    });
+                    
+                    // Reset all icons
+                    document.querySelectorAll('.faq-question-edgy span').forEach(span => {
+                        span.textContent = '+';
+                    });
+                    
+                    // Toggle current answer
+                    if (!isActive) {
+                        answer.classList.add('active');
+                        this.querySelector('span').textContent = '−';
+                    } else {
+                        this.querySelector('span').textContent = '+';
+                    }
+                });
+            });
+
+            // Form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData);
+                    
+                    // Show success message
+                    alert('Thank you for your message! We\'ll get back to you within 24 hours.\n\nFor faster response, you can also WhatsApp us directly.');
+                    
+                    // Reset form
+                    this.reset();
+                });
+            }
+
+            // Add active class to current page in navigation
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <script src="js/mobile-menu.js"></script>
+</body>
+</html>

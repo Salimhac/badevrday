@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="IMG-20251022-WA0050.jpg">
+    <title>About Us - BADEVRDAY MERCH</title>
+    <meta name="description" content="Learn about BADEVRDAY brand story, our mission, and what makes our merchandise unique.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* About Page Styles to Match Index.html */
+        .about-hero-edgy {
+            padding: 5rem 0;
+            background: #000;
+            border-top: 3px solid #ff0000;
+            border-bottom: 3px solid #ff0000;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated Background Elements */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 0, 0, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .about-hero-message {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .about-hero-card {
+            background: #111;
+            padding: 3rem;
+            border-radius: 15px;
+            border-left: 5px solid #ff0000;
+            position: relative;
+            animation: slideInUp 1s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-hero-header h1 {
+            color: #ff0000;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6);
+            }
+        }
+
+        .about-hero-accent-line {
+            width: 100px;
+            height: 3px;
+            background: #ff0000;
+            margin: 0 auto;
+            animation: stretch 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes stretch {
+            from { width: 50px; }
+            to { width: 150px; }
+        }
+
+        .about-hero-content p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-top: 1rem;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Enhanced About Content Section */
+        .about-content-edgy {
+            padding: 5rem 0;
+            background: #000;
+            border-bottom: 3px solid #ff0000;
+        }
+
+        .about-section-edgy {
+            margin-bottom: 4rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .about-section-edgy:nth-child(1) { animation-delay: 0.2s; }
+        .about-section-edgy:nth-child(2) { animation-delay: 0.4s; }
+        .about-section-edgy:nth-child(3) { animation-delay: 0.6s; }
+        .about-section-edgy:nth-child(4) { animation-delay: 0.8s; }
+
+        .about-section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .about-section-header h2 {
+            color: #ff0000;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        .about-section-accent-line {
+            width: 80px;
+            height: 3px;
+            background: #ff0000;
+            margin: 0 auto;
+        }
+
+        .about-section-content {
+            background: #111;
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-left: 3px solid #ff0000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.05), transparent);
+            transition: left 0.5s;
+        }
+
+        .about-section-content:hover::before {
+            left: 100%;
+        }
+
+        .about-section-content p {
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .about-section-content strong {
+            color: #ff0000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* Enhanced Values Grid */
+        .values-grid-edgy {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card-edgy {
+            background: #111;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 3px solid #ff0000;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .value-card-edgy:nth-child(1) { animation-delay: 0.3s; }
+        .value-card-edgy:nth-child(2) { animation-delay: 0.5s; }
+        .value-card-edgy:nth-child(3) { animation-delay: 0.7s; }
+        .value-card-edgy:nth-child(4) { animation-delay: 0.9s; }
+
+        .value-card-edgy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .value-card-edgy:hover::before {
+            left: 100%;
+        }
+
+        .value-card-edgy:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 0, 0, 0.2);
+        }
+
+        .value-card-edgy h3 {
+            color: #ff0000;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .value-card-edgy p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* Brand Meaning Section */
+        .brand-meaning {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .brand-term {
+            background: #111;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 2px solid #ff0000;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .brand-term:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.2);
+        }
+
+        .brand-term strong {
+            color: #ff0000;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Enhanced Footer */
+        .footer-edgy {
+            background: #111;
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 3px solid #ff0000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-edgy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.05), transparent);
+            animation: slideRight 3s infinite;
+        }
+
+        @keyframes slideRight {
+            to { left: 100%; }
+        }
+
+        .footer-edgy p {
+            color: #fff;
+            font-size: 1rem;
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .footer-brand {
+            color: #ff0000;
+            font-weight: bold;
+            font-size: 1.2rem;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-hero-card {
+                padding: 2rem;
+            }
+            
+            .about-hero-header h1 {
+                font-size: 2rem;
+            }
+            
+            .about-section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .values-grid-edgy {
+                grid-template-columns: 1fr;
+            }
+            
+            .brand-meaning {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-section-content {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-hero-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .value-card-edgy {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+    <div class="container">
+        <div class="logo">
+            <h1>BADEVRDAY</h1>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html" class="active">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        
+        <!-- Hamburger Menu Button -->
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu">
+    <button class="mobile-menu-close">&times;</button>
+    
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
+</div>
+    <!-- Enhanced About Hero Section -->
+    <section class="about-hero-edgy">
+        <!-- Animated Background Elements -->
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        
+        <div class="container">
+            <div class="about-hero-message">
+                <div class="about-hero-card">
+                    <div class="about-hero-header">
+                        <h1>ABOUT BADEVRDAY</h1>
+                        <div class="about-hero-accent-line"></div>
+                    </div>
+                    <div class="about-hero-content">
+                        <p>WHERE ATTITUDE MEETS STYLE - THE REVOLUTION OF STREETWEAR</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced About Content Section -->
+    <section class="about-content-edgy">
+        <div class="container">
+            <!-- Our Story Section -->
+            <div class="about-section-edgy">
+                <div class="about-section-header">
+                    <h2>OUR STORY</h2>
+                    <div class="about-section-accent-line"></div>
+                </div>
+                <div class="about-section-content">
+                    <p>BADEVRDAY emerged from the streets, born from a passion for authentic self-expression and bold design. What started as a small project among friends has grown into a movement that celebrates individuality and fearless creativity.</p>
+                    <p>We believe that clothing is more than just fabric - it's a statement, an attitude, a way of life. Every piece in our collection is designed to make you feel confident, powerful, and unapologetically yourself.</p>
+                </div>
+            </div>
+
+            <!-- Our Mission Section -->
+            <div class="about-section-edgy">
+                <div class="about-section-header">
+                    <h2>OUR MISSION</h2>
+                    <div class="about-section-accent-line"></div>
+                </div>
+                <div class="about-section-content">
+                    <p>To create high-quality, unique merchandise that empowers people to express their true selves. We're committed to excellence in every stitch and design.</p>
+                    
+                    <div class="values-grid-edgy">
+                        <div class="value-card-edgy">
+                            <h3>🔥 QUALITY</h3>
+                            <p>Premium materials that last and feel amazing. We never compromise on quality.</p>
+                        </div>
+                        <div class="value-card-edgy">
+                            <h3>🎨 DESIGN</h3>
+                            <p>Bold, original artwork that stands out from the crowd and makes a statement.</p>
+                        </div>
+                        <div class="value-card-edgy">
+                            <h3>💪 COMMUNITY</h3>
+                            <p>Building a tribe of like-minded individuals who embrace authenticity.</p>
+                        </div>
+                        <div class="value-card-edgy">
+                            <h3>🌱 AUTHENTICITY</h3>
+                            <p>Staying true to our roots and values in everything we create.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Brand Section -->
+            <div class="about-section-edgy">
+                <div class="about-section-header">
+                    <h2>THE BRAND MEANING</h2>
+                    <div class="about-section-accent-line"></div>
+                </div>
+                <div class="about-section-content">
+                    <p>Each element of our brand represents a piece of our philosophy and commitment to excellence:</p>
+                    
+                    <div class="brand-meaning">
+                        <div class="brand-term">
+                            <strong>BAD</strong>
+                            <p>Challenging norms and embracing uniqueness. Breaking boundaries.</p>
+                        </div>
+                        <div class="brand-term">
+                            <strong>EVR</strong>
+                            <p>Pushing creative boundaries. Everyday revolution in style.</p>
+                        </div>
+                        <div class="brand-term">
+                            <strong>DAY</strong>
+                            <p>Creating a community movement. Daily commitment to excellence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Promise Section -->
+            <div class="about-section-edgy">
+                <div class="about-section-header">
+                    <h2>OUR PROMISE</h2>
+                    <div class="about-section-accent-line"></div>
+                </div>
+                <div class="about-section-content">
+                    <p>When you wear BADEVRDAY, you're not just wearing clothing - you're joining a community. You're making a statement. You're embracing the BADEVRDAY lifestyle of confidence, creativity, and authenticity.</p>
+                    <p>We stand behind every product we create and are committed to providing an exceptional experience from browse to wear. Your satisfaction is our priority, and we're dedicated to making sure every piece you own becomes a staple in your wardrobe.</p>
+                    <p><strong>Join the movement. Wear the attitude. Be BAD. Every Day.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer-edgy">
+        <div class="container">
+            <p>&copy; 2024 <span class="footer-brand">BADEVRDAY MERCH</span>. All rights reserved. | Wear the Attitude. Be Bad.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation on load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add active class to current page in navigation
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Add hover effects to value cards
+            const valueCards = document.querySelectorAll('.value-card-edgy');
+            valueCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+        <script src="js/mobile-menu.js"></script>
+</body>
+</html>
